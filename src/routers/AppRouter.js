@@ -27,7 +27,7 @@ let AppRouter = () => (
         <Route path="/addorder" component={AddOrder} />
         <Route component={NotFound} />
       </Switch>
-      <VeckansKaka />
+      {/* <VeckansKaka /> */}
     </div>
   </BrowserRouter>
 );

@@ -7,6 +7,7 @@
     "antd": "^3.6.5",
     "antd-iconfont": "^3.0.3",
     "axios": "^0.18.0",
+    "express": "^4.16.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-multistep": "^3.2.1",
@@ -15,8 +16,8 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
-    "uuid": "^3.3.2",
-    "test": "jest"
+    "test": "jest",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
