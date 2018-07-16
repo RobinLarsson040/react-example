@@ -41,6 +41,7 @@ let sendMessage = (e) =>{
   database.ref('messages' + currentdate).set({
     message: value
   });
+  document.querySelector('#input').value = ''
 }
 
 export default AppRouter;
