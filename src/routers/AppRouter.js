@@ -29,6 +29,7 @@ let AppRouter = () => (
       </Switch>
      <input id="input" placeholder="message"/>
      <button onClick={sendMessage}>send</button>
+     < VeckansKaka />
     </div>
   </BrowserRouter>
 );
