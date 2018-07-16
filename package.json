@@ -17,7 +17,6 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
-    "test": "jest",
     "uuid": "^3.3.2"
   },
   "scripts": {
@@ -25,8 +24,5 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "devDependencies": {
-    "jest": "^23.4.0"
   }
 }
