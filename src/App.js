@@ -4,6 +4,7 @@ import AppRouter from "./routers/AppRouter";
 import { Provider } from "react-redux";
 import configureStore from "./store/ConfigureStore";
 import getVisibleOrders from "./selectors/Orders_selector";
+import {database} from './firebase/firebase'
 import {
   addOrder,
   removeOrderById,
@@ -11,6 +12,7 @@ import {
 } from "./actions/Orders_action";
 
 let store = configureStore();
+
 
 store.subscribe(() => {
   let state = store.getState();

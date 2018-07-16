@@ -8,7 +8,7 @@ import NotFound from "../components/NotFound";
 import AddOrder from "../components/AddOrder";
 import EditOrder from "../components/EditOrder";
 import VeckansKaka from "../components/VeckansKaka";
-
+import {database} from '../firebase/firebase'
 
 
 let AppRouter = () => (
@@ -27,10 +27,20 @@ let AppRouter = () => (
         <Route path="/addorder" component={AddOrder} />
         <Route component={NotFound} />
       </Switch>
-      {/* <VeckansKaka /> */}
+     <input id="input" placeholder="message"/>
+     <button onClick={sendMessage}>send</button>
     </div>
   </BrowserRouter>
 );
 
+let sendMessage = (e) =>{
+  var currentdate = new Date();
+  e.preventDefault();
+  let value = document.querySelector('#input').value
+  console.log(value);
+  database.ref('messages' + currentdate).set({
+    message: value
+  });
+}
 
 export default AppRouter;

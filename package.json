@@ -8,6 +8,7 @@
     "antd-iconfont": "^3.0.3",
     "axios": "^0.18.0",
     "express": "^4.16.3",
+    "firebase": "^5.2.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-multistep": "^3.2.1",
