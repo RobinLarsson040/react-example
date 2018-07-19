@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import getVisibleOrders from "../selectors/Orders_selector";
 import { Button } from "antd";
 import { Link } from "react-router-dom";
+import '../styles/orderlist.css'
 
 
 
@@ -22,7 +23,7 @@ class OrdersList extends React.Component {
           itemLayout="horizontal"
           dataSource={this.props.orders}
           renderItem={item => (
-            <List.Item key={item.id}>
+            <List.Item  key={item.id}>
               <p className="list_item">Amount: {item.amount}</p>
               <p className="list_item">State: {item.state}</p>
               <Link to={`/edit/${item.id}`}>

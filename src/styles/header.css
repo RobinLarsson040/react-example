@@ -1,0 +1,20 @@
+
+
+.title {
+  color: #111;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+}
+
+.menu {
+    color: #111;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 2;
+}
