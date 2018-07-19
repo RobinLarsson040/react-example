@@ -3,7 +3,7 @@ import OrderForm from "./OrderForm";
 import { addOrder, editOrderById } from "../actions/Orders_action";
 import connect from "react-redux/lib/connect/connect";
 import { Button } from "antd";
-import { removeOrderById } from "../actions/Orders_action";
+import { startRemoveOrder } from "../actions/Orders_action";
 
 class EditOrder extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class EditOrder extends React.Component {
         />
         <Button
           onClick={() => {
-            this.props.dispatch(removeOrderById({ id: this.props.order.id }));
+            this.props.dispatch(startRemoveOrder({ id: this.props.order.id }));
             this.props.history.push('/orders');
           }}
           type="danger"

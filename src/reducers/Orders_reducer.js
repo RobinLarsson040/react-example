@@ -18,6 +18,8 @@ let orderReducer = (state = defaultOrderState, action) => {
             return item;
           }
         });
+        case "GET_ORDERS":
+        return action.orders
       default:
         return state;
     }

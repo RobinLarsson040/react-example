@@ -1,6 +1,7 @@
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
 import orderReducer from "../reducers/Orders_reducer";
 import filterReducer from "../reducers/Filters_reducer";
+import thunk from 'redux-thunk';
 
 export default () => {
   let store = createStore(
@@ -8,7 +9,7 @@ export default () => {
       orders: orderReducer,
       filter: filterReducer
     }),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    applyMiddleware(thunk)
   );
 
   return store;
