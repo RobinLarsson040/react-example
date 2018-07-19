@@ -3,25 +3,14 @@ import React from "react";
 import AppRouter from "./routers/AppRouter";
 import { Provider } from "react-redux";
 import configureStore from "./store/ConfigureStore";
-import getVisibleOrders from "./selectors/Orders_selector";
 import { database } from "./firebase/firebase";
 import {
-  startGetOrders,
-  addOrder,
-  removeOrderById,
-  editOrderById
+  editOrderById,
+  getOrders,
+  removeOrderById
 } from "./actions/Orders_action";
 
-
 let store = configureStore();
-
-store.subscribe(()=>{
-  console.log(store.getState())
-})
-
-store.dispatch(startGetOrders()).then(()=>{
-
-})
 
 let jsx = (
   <Provider store={store}>
@@ -29,35 +18,28 @@ let jsx = (
   </Provider>
 );
 
- ///CHANGE
-database.ref("orders").on("value", snapshot => {
+///ADD
+database.ref('orders').on('value', snapshot => {
   let orders = [];
   snapshot.forEach(item => {
+    console.log(item.val())
     orders.push({
       id: item.key,
       ...item.val()
     });
   });
-})
-
-
-//REMOVE
+  store.dispatch(getOrders(orders));
+});
+ 
+/*  //REMOVE
 database.ref("orders").on("child_removed", snapshot => {
-  console.log(snapshot.key, snapshot.val);
+  store.dispatch(removeOrderById({ id: snapshot.key }));
 });
 
 //EDIT
 database.ref("orders").on("child_changed", snapshot => {
-  console.log(snapshot.key, snapshot.val);
-});
-
-//ADDED
-database.ref("orders").on("child_added", snapshot => {
-  console.log(snapshot.key, snapshot.val);
-}); 
-
-
-
-
+  store.dispatch(editOrderById({ id: snapshot.key }, snapshot.val()));
+});  */
+ 
 
 export default jsx;

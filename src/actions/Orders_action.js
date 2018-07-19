@@ -15,25 +15,6 @@ export let getOrders = orders => {
   };
 };
 
-export let startGetOrders = () => {
-  let orders = [];
-  return dispatch => {
-   return database
-      .ref("orders")
-      .once("value", snapshot => {
-        snapshot.forEach(item => {
-          orders.push({
-            id: item.key,
-            ...item.val()
-          });
-        });
-      })
-      .then(() => {
-        dispatch(getOrders(orders));
-      });
-  };
-};
-
 export let addOrder = order => {
   return {
     type: "ADD_ORDER",
@@ -47,7 +28,7 @@ export let startAddOrder = (orderData = defaultState) => {
       .ref("orders")
       .push(orderData)
       .then(ref => {
-        dispatch(addOrder({ id: ref.key, ...orderData }));
+       /*  dispatch(addOrder({ id: ref.key, ...orderData })); */
       });
   };
 };
@@ -70,17 +51,19 @@ export let removeOrderById = ({ id }) => {
   };
 };
 
-let startEditOrder = ()=>{
+export let startEditOrder = (id, updates)=>{
   return dispatch => {
-    
+    database.ref(`orders/${id.id}`).update(updates)
+    .then(()=>{
+      dispatch(editOrderById(id,updates))
+    })
   }
 }
-
 
 export let editOrderById = ({ id }, updates) => {
   return {
     type: "EDIT_ORDER",
-    id,
+    id: id,
     updates: updates
   };
 };

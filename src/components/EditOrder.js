@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import OrderForm from "./OrderForm";
-import { addOrder, editOrderById } from "../actions/Orders_action";
 import connect from "react-redux/lib/connect/connect";
 import { Button } from "antd";
-import { startRemoveOrder } from "../actions/Orders_action";
+import { startRemoveOrder, startEditOrder } from "../actions/Orders_action";
 
 class EditOrder extends React.Component {
   constructor(props) {
@@ -16,7 +15,7 @@ class EditOrder extends React.Component {
         <OrderForm
           defaultState={this.props.order}
           onSubmit={order => {
-            this.props.dispatch(editOrderById({ id: order.id }, order));
+            this.props.dispatch(startEditOrder({ id: order.id }, order));
             this.props.history.push("/orders");
           }}
         />
