@@ -2,18 +2,13 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { Menu, Icon } from 'antd';
 import 'antd/dist/antd.css';
+import connect from "react-redux/lib/connect/connect";
+import {editPage} from '../actions/Navigation_action'
 
 
 class Header extends Component {
-  state = {
-    current: 'orders',
-  }
-
   handleClick = (e) => {
-    console.log('click ', e);
-    this.setState({
-      current: e.key,
-    });
+    this.props.dispatch(editPage(e.key))
   }
 
   render() {
@@ -22,7 +17,7 @@ class Header extends Component {
         <h1 className="App-title">Order Tracking</h1>
         <Menu
           onClick={this.handleClick}
-          selectedKeys={[this.state.current]}
+          selectedKeys={[this.props.page]}
           mode="horizontal"
         >
           <Menu.Item key="orders">
@@ -43,4 +38,11 @@ class Header extends Component {
   }
 }
 
-export default Header;
+let mapStateToProps = (state,props)=>{
+  console.log(state.page)
+  return {
+    page: state.navigation.page
+  }
+}
+
+export default connect(mapStateToProps)(Header);
