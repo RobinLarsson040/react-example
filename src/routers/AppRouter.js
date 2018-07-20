@@ -8,8 +8,7 @@ import Header from "../components/Header";
 import NotFound from "../components/NotFound";
 import AddOrder from "../components/AddOrder";
 import EditOrder from "../components/EditOrder";
-import {database} from '../firebase/firebase'
-
+import { database } from "../firebase/firebase";
 
 let AppRouter = () => (
   <BrowserRouter>
@@ -20,9 +19,9 @@ let AppRouter = () => (
       />
       <Header />
       <Switch>
+        <Route exact path="/" component={Orders} />
         <Route path="/orders" component={Orders} />
-        <Route path="/" component={Orders} />
-         <Route path="/edit/:id" component={EditOrder} /> 
+        <Route path="/edit/:id" component={EditOrder} />
         <Route path="/orderlines" component={Orderlines} />
         <Route path="/invoices" component={Invoices} />
         <Route path="/addorder" component={AddOrder} />
@@ -31,6 +30,5 @@ let AppRouter = () => (
     </div>
   </BrowserRouter>
 );
-
 
 export default AppRouter;
