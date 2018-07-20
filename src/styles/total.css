@@ -1,0 +1,15 @@
+.total {
+    display: flex;
+    flex-direction: row
+}
+
+.total_green {
+    font-size: 30px;
+    color: rgb(40, 236, 56);
+    margin-left: 20px
+}
+
+.total_black {
+    font-size: 30px;
+    color: rgb(0, 0, 0)
+}
