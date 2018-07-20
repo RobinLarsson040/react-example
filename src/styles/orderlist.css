@@ -38,7 +38,7 @@
   margin-left: 3%;
   width: 200px;
   color: #000000;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
   font-size: 14px;
   line-height: 24px;
   margin: 0 0 24px;
@@ -50,7 +50,31 @@
   margin-left: 3%;
   width: 400px;
   color: #5c5c5c;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.amount {
+  margin-left: 3%;
+  width: 200px;
+  color: #21c500;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.state {
+  margin-left: 3%;
+  width: 200px;
+  color: #000000;
+  font-family: Verdana, Geneva, sans-serif;
   font-size: 14px;
   line-height: 24px;
   margin: 0 0 24px;
@@ -72,28 +96,4 @@
 
 .customerName span {
     font-size: 16px;
-}
-
-.amount {
-  margin-left: 3%;
-  width: 200px;
-  color: #21c500;
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  margin: 0 0 24px;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-.state {
-  margin-left: 3%;
-  width: 200px;
-  color: #000000;
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  margin: 0 0 24px;
-  text-align: justify;
-  text-justify: inter-word;
 }
