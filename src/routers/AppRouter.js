@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, BrowserRouter, Switch } from "react-router-dom";
 import Orders from "../components/Orders";
+import OrderList from "../components/OrdersList";
 import Orderlines from "../components/Orderlines";
 import Invoices from "../components/Invoices";
 import Header from "../components/Header";
@@ -20,6 +21,7 @@ let AppRouter = () => (
       <Header />
       <Switch>
         <Route path="/orders" component={Orders} />
+        <Route path="/" component={Orders} />
          <Route path="/edit/:id" component={EditOrder} /> 
         <Route path="/orderlines" component={Orderlines} />
         <Route path="/invoices" component={Invoices} />

@@ -11,7 +11,7 @@ class AddOrder extends React.Component {
   render() {
     return (
       <div>
-        <OrderForm defaultState = {{customerName: '', amount: 0}} onSubmit = {(order)=>{
+        <OrderForm defaultState = {{customerName: '', amount: 0, state: 'PENDING'}} onSubmit = {(order)=>{
             this.props.dispatch(startAddOrder(order))
             this.props.history.push('/orders');
             this.props.dispatch(editPage('orders'))

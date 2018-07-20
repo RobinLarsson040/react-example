@@ -1,8 +1,99 @@
-.list_item_customerName {
-    color: #111;
-    font-family: "Helvetica Neue", sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    letter-spacing: -1px;
-    line-height: 2;
+.list_item_title {
+  margin-left: 3%;
+  width: 200px;
+  color: #000000;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.list_item_green {
+  margin-left: 3%;
+  width: 200px;
+  color: #21c500;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.list_item_red {
+  margin-left: 3%;
+  width: 200px;
+  color: #1be614;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.customerName {
+  margin-left: 3%;
+  width: 200px;
+  color: #000000;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.description {
+  margin-left: 3%;
+  width: 400px;
+  color: #5c5c5c;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.description span {
+    font-size: 16px;
+}
+
+.amount span {
+    font-size: 16px;
+}
+
+.state span {
+    font-size: 16px;
+}
+
+.customerName span {
+    font-size: 16px;
+}
+
+.amount {
+  margin-left: 3%;
+  width: 200px;
+  color: #21c500;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.state {
+  margin-left: 3%;
+  width: 200px;
+  color: #000000;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
 }

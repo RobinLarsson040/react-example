@@ -4,9 +4,10 @@ import Filter from "./Filter";
 import SortBy from "./SortBy";
 
 let Orders = () => (
+
   <div>
     <Filter />
-    <OrdersList />
+    < OrdersList />
   </div>
 );
 

@@ -2,14 +2,60 @@ import React from "react";
 import connect from "react-redux/lib/connect/connect";
 import { Form, Input, Button, Alert } from "antd";
 import TextArea from "antd/lib/input/TextArea";
+import { Menu, Dropdown, Icon } from "antd";
+
+
 
 class OrderForm extends React.Component {
   constructor(props) {
     let errorMessage = false;
     super(props);
     this.state = props.defaultState;
-    console.log(this.state);
   }
+
+   menu = (
+    <Menu>
+            <Menu.Item>
+        <a
+          onClick={() => {
+            this.setState(() => {
+              return {
+                state: 'PENDING'
+              };
+            });
+          }}
+        >
+          PENDING
+        </a>
+      </Menu.Item>
+      <Menu.Item>
+        <a
+          onClick={() => {
+            this.setState(() => {
+              return {
+                state: 'PAYMENT ACCEPTED'
+              };
+            });
+          }}
+        >
+          PAYMENT ACCEPTED
+        </a>
+      </Menu.Item>
+      <Menu.Item>
+        <a
+          onClick={() => {
+            this.setState(() => {
+              return {
+                state: 'PAYMENT REJECTED'
+              };
+            });
+          }}
+        >
+          PAYMENT REJECTED
+        </a>
+      </Menu.Item>
+    </Menu>
+  );
 
   resetDefaults = () => {
     document.getElementById("order_form").reset();
@@ -67,7 +113,7 @@ class OrderForm extends React.Component {
             placeholder="Description"
             type="text"
             onChange={e => {
-              let value = e.target.value;
+              let value = e.target.value.toLowerCase();
               this.setState(() => {
                 return {
                   description: value
@@ -77,27 +123,18 @@ class OrderForm extends React.Component {
           />
           <br />
           <br />
-          <Input
-            style={{ width: 300 }}
-            value={this.state.state}
-            placeholder="Order-State"
-            type="text"
-            onChange={e => {
-              let value = e.target.value;
-              this.setState(() => {
-                return {
-                  state: value
-                };
-              });
-            }}
-          />
+          <Dropdown overlay={this.menu}>
+            <Button style={{ marginLeft: 8 }}>
+              {this.state.state} <Icon type="down" />
+            </Button>
+          </Dropdown>
           <br />
           <br />
           <Button
             type="primary"
             onClick={e => {
               e.preventDefault();
-              if (!this.state.customerName || !this.state.amount) {
+              if (!this.state.customerName || this.state.amount < 1) {
                 this.errorMessage = true;
               } else {
                 this.errorMessage = false;
